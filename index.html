@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>COS 436 – Human-Computer Interaction Project Fair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ---------- Base styles ---------- */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #f5f5f7;
+      color: #222;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin: 0 0 8px;
+    }
+
+    header h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 4px 0;
+      color: #555;
+    }
+
+    header .meta {
+      font-size: 0.95rem;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    .hero-image {
+      margin: 24px auto 8px;
+      max-width: 100%;
+      border-radius: 10px;
+      display: block;
+      background: #ddd;
+      height: 220px; /* placeholder height if no image */
+    }
+
+    .caption {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    /* ---------- Intro section ---------- */
+    .intro {
+      margin-bottom: 40px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+
+    .intro h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 32px 0;
+    }
+
+    /* ---------- Section headings ---------- */
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      margin-top: 32px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    /* ---------- Project cards ---------- */
+    .project {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      margin-bottom: 18px;
+    }
+
+    .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .project-team {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #555;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: #f0f0f3;
+      display: inline-block;
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 8px 0 6px;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .project-image {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 8px 0 10px;
+      display: block;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .project-links a {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      background: #fafafa;
+    }
+
+    .project-authors {
+      font-size: 0.86rem;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #999;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.9rem;
+      }
+
+      .project {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- ================= HEADER ================= -->
+    <header>
+      <h1>COS 436: Human–Computer Interaction</h1>
+      <h2>Princeton University · Project Fair</h2>
+      <div class="meta">Student Final Projects</div>
+
+      <!-- OPTIONAL: replace this div with an <img> if you have a real photo -->
+      <!-- Example:
+      <img
+        class="hero-image"
+        src="images/project-fair-banner.jpg"
+        alt="Students presenting at the COS 436 project fair"
+      />
+      -->
+      <div class="hero-image"></div>
+
+      <div class="caption">
+        Photo from the COS 436 Project Fair.
+      </div>
+    </header>
+
+    <!-- ================= INTRO ================= -->
+    <section class="intro">
+      <h3>About the Projects</h3>
+      <p>
+        In this course, students designed, built, and evaluated interactive systems
+        that explore how people use and experience technology in everyday life.
+        Working in small teams, they chose problems ranging from AI-mediated
+        communication to live translation, sustainability, productivity, and
+        collaboration.
+      </p>
+      <p>
+        Below is a sample of this year’s system implementation projects. For each
+        project, you’ll find a brief description along with links to the team’s
+        report, video, or system when available.
+      </p>
+    </section>
+
+    <hr />
+
+    <!-- ========== SYSTEM IMPLEMENTATION PROJECTS ========== -->
+    <section>
+      <h2 class="section-title">System Implementation Projects</h2>
+      <p class="section-subtitle">
+        Interactive systems built and evaluated by student teams.
+      </p>
+
+      <!-- TEAM 2 -->
+      <article class="project">
+        <div class="project-header">
+          <div class="project-team">Team 2</div>
+        </div>
+
+        <div class="project-title">Sorry I Missed This!</div>
+
+        <p class="project-desc">
+          Maintaining long-distance relationships—friends, partners, and family—often
+          suffers from stalled conversations and the awkwardness of not knowing how
+          to restart them. <b>Sorry I Missed This!</b> explores whether AI-generated,
+          context-aware conversation prompts can make remote communication easier,
+          more frequent, and more authentic. The system analyzes message history
+          and relevant life events to surface personalized suggestions that feel
+          natural rather than templated. The project investigates how these prompts
+          influence message frequency, perceived sincerity, and users’ trust in
+          AI-mediated communication.
+        </p>
+
+        <!-- Optional image (fill in src when you have it)
+        <img
+          class="project-image"
+          src="images/team2-sorry-i-missed-this.png"
+          alt="Team 2 – Sorry I Missed This interface"
+        />
+        -->
+
+        <div class="project-links">
+          <a href="#" target="_blank">Report (coming soon)</a>
+          <a href="#" target="_blank">Video (coming soon)</a>
+          <a href="#" target="_blank">System (coming soon)</a>
+        </div>
+
+        <div class="project-authors">
+          Mayan Wasu, Ishaan Javali, Eshaan Govil, Jules Mpano
+        </div>
+      </article>
+
+      <!-- TEAM 3 -->
+      <article class="project">
+        <div class="project-header">
+          <div class="project-team">Team 3</div>
+        </div>
+
+        <div class="project-title">
+          Full Audio Replacement vs Simultaneous Audio in Live Translation
+        </div>
+
+        <p class="project-desc">
+          Real-time translation devices increasingly mediate face-to-face
+          communication, yet their audio-mixing design choices—full replacement or
+          simultaneous mix—remain understudied. This project compares
+          <b>full audio replacement</b> (hearing only the translated track) with
+          <b>simultaneous audio</b> (quiet original + translation) using a custom-built
+          translation video system. Through controlled experiments, the team measures
+          comprehension, cognitive load, tone perception, and non-lexical cue
+          recognition across conditions. Results suggest no universally optimal
+          setting; instead, users vary widely, motivating translation tools that
+          expose customizable mixing controls rather than a rigid default.
+        </p>
+
+        <!--
+        <img
+          class="project-image"
+          src="images/team3-live-translation.png"
+          alt="Team 3 – Live translation interface"
+        />
+        -->
+
+        <div class="project-links">
+          <a href="#" target="_blank">Report (coming soon)</a>
+          <a href="#" target="_blank">Video (coming soon)</a>
+          <a href="https://fullsim-audio-replacement.onrender.com/" target="_blank">
+            System
+          </a>
+        </div>
+
+        <div class="project-authors">
+          David Wang, Sofia Marina, Anupta Argo, Michael Huang
+        </div>
+      </article>
+
+      <!-- TEAM 4 -->
+      <article class="project">
+        <div class="project-header">
+          <div class="project-team">Team 4</div>
+        </div>
+
+        <div class="project-title">Food Waste Score</div>
+
+        <p class="project-desc">
+          Many households underestimate how much edible food they throw away,
+          leading to invisible but significant waste. <b>Food Waste Score</b> is an
+          interactive system that lets users log discarded food and receive an
+          easy-to-interpret score summarizing their waste patterns. The tool
+          provides reflective prompts and gentle suggestions for meal planning or
+          storage improvements. The team conducted a pilot deployment at a
+          Princeton eating club, exploring whether lightweight self-tracking can
+          shift awareness and support more sustainable habits in communal dining
+          environments.
+        </p>
+
+        <!--
+        <img
+          class="project-image"
+          src="images/team4-food-waste-score.png"
+          alt="Team 4 – Food Waste Score dashboard"
+        />
+        -->
+
+        <div class="project-links">
+          <a href="#" target="_blank">Report (coming soon)</a>
+          <a href="#" target="_blank">Video (coming soon)</a>
+          <a href="#" target="_blank">System (coming soon)</a>
+        </div>
+
+        <div class="project-authors">
+          Ayodeji Olusanya, James Swinehart, Luke Helstrom, Hidde Lycklama
+        </div>
+      </article>
+
+      <!-- TEAM 5 -->
+      <article class="project">
+        <div class="project-header">
+          <div class="project-team">Team 5</div>
+        </div>
+
+        <div class="project-title">
+          Low-Friction Review Notifications: Combatting Extreme Review Polarization
+        </div>
+
+        <p class="project-desc">
+          Online platforms suffer from polarized reviews—extremely positive or
+          extremely negative—while moderate opinions remain underrepresented.
+          This project investigates whether <b>near-zero-friction review prompts</b>,
+          delivered through quick, tappable notifications, can encourage more
+          balanced rating distributions. The team designs and deploys prototypes
+          to compare participation rates, review quality, and sentiment curves
+          against standard review flows. Their work highlights how notification
+          design and interaction cost shape who contributes feedback and how
+          polarized a rating ecosystem becomes.
+        </p>
+
+        <!--
+        <img
+          class="project-image"
+          src="images/team5-review-polarization.png"
+          alt="Team 5 – Review notification mockup"
+        />
+        -->
+
+        <div class="project-links">
+          <a href="#" target="_blank">Report (coming soon)</a>
+          <a href="#" target="_blank">Video (coming soon)</a>
+          <a href="#" target="_blank">System (coming soon)</a>
+        </div>
+
+        <div class="project-authors">
+          Austin Li, Stephanie Oh, Shannon Yeow, Ishaan Bhagat
+        </div>
+      </article>
+
+      <!-- TEAM 6 -->
+      <article class="project">
+        <div class="project-header">
+          <div class="project-team">Team 6</div>
+        </div>
+
+        <div class="project-title">AI Audio Summaries for Task Resumption</div>
+
+        <p class="project-desc">
+          Interruptions are a major source of productivity loss, and resuming a
+          complex task often requires costly mental reconstruction. This project
+          examines whether <b>LLM-generated audio summaries</b> can help users quickly
+          recall context when returning to a task after a break. Participants
+          complete multi-step workflows, step away, and then resume either with or
+          without an AI-provided recap. The study measures resumption time,
+          perceived effort, and confidence, offering insights into how proactive
+          AI summarization can support real-world knowledge work.
+        </p>
+
+        <!--
+        <img
+          class="project-image"
+          src="images/team6-task-resumption.png"
+          alt="Team 6 – Audio summary interface"
+        />
+        -->
+
+        <div class="project-links">
+          <a href="#" target="_blank">Report (coming soon)</a>
+          <a href="#" target="_blank">Video (coming soon)</a>
+          <a href="#" target="_blank">System (coming soon)</a>
+        </div>
+
+        <div class="project-authors">
+          Junrui Wang, Yang Duan, Michelle Le
+        </div>
+      </article>
+
+      <!-- TEAM 7 -->
+      <article class="project">
+        <div class="project-header">
+          <div class="project-team">Team 7</div>
+        </div>
+
+        <div class="project-title">
+          Motivating Mundane Tasks Through AR Gamification
+        </div>
+
+        <p class="project-desc">
+          Mundane chores like cleaning or organizing are easy to procrastinate.
+          This project explores whether <b>augmented reality gamification</b> can
+          make such tasks more engaging and enjoyable. The team built an AR system
+          that generates virtual coins scattered across a real surface; as users
+          physically clean, they must “sweep” the coins with their phone to
+          collect them. By observing behavior and motivation, the project examines
+          how playful overlays can transform routine chores into satisfying,
+          game-like interactions.
+        </p>
+
+        <!--
+        <img
+          class="project-image"
+          src="images/team7-ar-coins.png"
+          alt="Team 7 – AR coins cleaning game"
+        />
+        -->
+
+        <div class="project-links">
+          <a href="#" target="_blank">Report (coming soon)</a>
+          <a href="#" target="_blank">Video (coming soon)</a>
+          <a href="#" target="_blank">System (coming soon)</a>
+        </div>
+
+        <div class="project-authors">
+          Arika Hassan, Ximu Du, Daniel Wang
+        </div>
+      </article>
+
+      <!-- TEAM 8 -->
+      <article class="project">
+        <div class="project-header">
+          <div class="project-team">Team 8</div>
+        </div>
+
+        <div class="project-title">
+          CogniSplit: LLM-Mediated Instruction Distribution for Effective Collaboration
+        </div>
+
+        <p class="project-desc">
+          Many collaborative tasks begin with a single dense set of instructions
+          that teammates must individually parse, often resulting in uneven
+          understanding and duplicated work. <b>CogniSplit</b> uses large language
+          models to rephrase, split, and assign tailored sub-instructions across
+          team members according to their roles or strengths. The system generates
+          coordinated, role-adapted guidance and delivers it in a shared
+          interface. The project studies how LLM-mediated instruction distribution
+          influences coordination quality, workload balance, and team effectiveness
+          during complex group tasks.
+        </p>
+
+        <!--
+        <img
+          class="project-image"
+          src="images/team8-cognisplit.png"
+          alt="Team 8 – CogniSplit interface"
+        />
+        -->
+
+        <div class="project-links">
+          <a href="#" target="_blank">Report (coming soon)</a>
+          <a href="#" target="_blank">Video (coming soon)</a>
+          <a href="#" target="_blank">System (coming soon)</a>
+        </div>
+
+        <div class="project-authors">
+          Seungho Lee, Hao Teng, Kirin Danek
+        </div>
+      </article>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      COS 436 · Human–Computer Interaction · Princeton University
+    </footer>
+  </div>
+</body>
+</html>
